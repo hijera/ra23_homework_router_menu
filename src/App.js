@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DriftPage from './components/DriftPage';
+import Menu from './components/Menu';
+import HomePage from './components/HomePage';
+import TimeAttackPage from "./components/TimeAttackPage";
+import ForzaPage from "./components/ForzaPage";
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
+    const menu_list=[{link:'/',title:'Главная'},
+        {link:'/drift',title:'Дрифт-такси'},
+        {link:'/timeattack',title:'Time Attack'},
+        {link:'/forza',title:'Forza Karting'}];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+          <Menu menu={menu_list} />
+          <div className="page">
+            <Route path="/" exact component={HomePage} />
+            <Route path="/drift" component={DriftPage} />
+            <Route path="/timeattack" component={TimeAttackPage} />
+            <Route path="/forza" component={ForzaPage} />
+          </div>
+        </div>
+      </Router>
   );
 }
 

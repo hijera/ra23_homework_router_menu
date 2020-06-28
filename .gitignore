@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea/vcs.xml
+.idea/ra23_homework_router_menu.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/deployment.xml
